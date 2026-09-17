@@ -1,0 +1,34 @@
+{
+  "built_at": "2026-09-17T19:17:04+00:00",
+  "seasons": [
+    2000,
+    2025
+  ],
+  "rows": 312,
+  "sources": {
+    "rainfall": "CHIRPS v2.0 daily, 0.05 deg (Funk et al. 2015), UCSB Climate Hazards Center",
+    "temperature": "ERA5 daily maximum 2 m temperature and FAO-56 reference evapotranspiration (ECMWF/Copernicus) via Open-Meteo archive API",
+    "vegetation": "MODIS MOD13Q1/MYD13Q1 v6.1 250 m 16-day NDVI (NASA LP DAAC) via Microsoft Planetary Computer",
+    "cropland_mask": "ESA WorldCover 2021 v200, 10 m (class 40 cropland)",
+    "yields": "Crop Estimates Committee (SAGIS) and HarvestStat Africa v1.2; commercial white + yellow maize by province",
+    "yield_check": "DAFF Abstract of Agricultural Statistics 2018, Table 9"
+  },
+  "definitions": {
+    "season": "planting year Y = the Y/Y+1 summer crop",
+    "rain_mm": "CHIRPS total ((10, 1), (3, 31))",
+    "rain_flowering_mm": "CHIRPS total over this district-season's flowering window: green-up +30 to +65 days (fallback ((1, 15), (2, 15)))",
+    "water_balance_mm": "CHIRPS rainfall minus FAO-56 reference evapotranspiration, ((10, 1), (3, 31))",
+    "water_balance_flowering_mm": "same, over the flowering window",
+    "greenup_doy": "day of year when cropland NDVI first passes 50% of the season's amplitude, searched over ((10, 1), (2, 28)) (negative = before 1 January)",
+    "dry_spell_days": "longest run of days < 1.0 mm within ((12, 1), (3, 31))",
+    "heat_stress_days": "days with Tmax >= 30.0 C within ((12, 1), (3, 31))",
+    "ndvi_peak": "max of 3-composite running median of cropland NDVI within ((12, 1), (4, 30))",
+    "ndvi_integral": "mean cropland NDVI within ((12, 1), (4, 30))",
+    "ndvi_anomaly": "ndvi_peak minus district mean over seasons 2000-2014",
+    "yield_tha": "provincial commercial maize (white + yellow) production / area planted"
+  },
+  "latest_yield": {
+    "season": 2025,
+    "status": "preliminary (CEC seventh production forecast, 2026-08-26)"
+  }
+}

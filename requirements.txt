@@ -1,0 +1,20 @@
+# App
+streamlit==1.64.0
+pandas==3.0.5
+numpy==2.5.3
+plotly==7.1.0
+pydeck==0.9.3
+scikit-learn==1.9.1
+python-dotenv==1.2.3
+reportlab==5.0.1
+anthropic==1.6.0
+
+# Data pipeline (python -m src.pipeline)
+requests==2.34.2
+rasterio==1.5.1
+pdfplumber==0.11.10
+openpyxl==3.1.5
+pillow==12.3.0
+
+# Tests
+pytest==9.1.1

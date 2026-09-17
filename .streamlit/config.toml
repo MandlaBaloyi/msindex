@@ -1,0 +1,19 @@
+[server]
+# Serves ./static at /app/static/, so the deck.gl map can load the rendered greenness overlays
+enableStaticServing = true
+
+[theme]
+# Earth-observation palette: deep soil blue for primary actions, warm sand background
+primaryColor = "#2C7BB6"
+backgroundColor = "#FBF9F5"
+secondaryBackgroundColor = "#F1EDE4"
+textColor = "#1F2933"
+linkColor = "#1A5E8A"
+font = "Source Sans Pro"
+headingFont = "Source Serif Pro"
+baseRadius = "0.5rem"
+borderColor = "#DED7C8"
+showSidebarBorder = true
+
+[theme.sidebar]
+backgroundColor = "#F1EDE4"
