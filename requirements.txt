@@ -8,6 +8,7 @@ scikit-learn==1.9.1
 python-dotenv==1.2.3
 reportlab==5.0.1
 anthropic==1.6.0
+google-genai==2.24.0
 
 # Data pipeline (python -m src.pipeline)
 requests==2.34.2
