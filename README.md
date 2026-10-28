@@ -1,4 +1,26 @@
-# msIndex
+<p align="center">
+  <img src="docs/img/banner.svg" alt="msIndex: parametric maize insurance, priced and proven on 25 years of satellite data" width="100%">
+</p>
+
+<p align="center">
+  <img alt="python" src="https://img.shields.io/badge/python-3.12%2B-3776AB?logo=python&logoColor=white">
+  <img alt="app" src="https://img.shields.io/badge/app-Streamlit-FF4B4B?logo=streamlit&logoColor=white">
+  <img alt="tests" src="https://img.shields.io/badge/tests-56-brightgreen">
+  <img alt="result" src="https://img.shields.io/badge/real%20losses%20paid-75%25%20vs%2050%25-01665E">
+  <img alt="data" src="https://img.shields.io/badge/data-6%20public%20sources-8C510A">
+  <img alt="licence" src="https://img.shields.io/badge/licence-MIT-blue">
+</p>
+
+<p align="center">
+  <a href="#the-headline-result">Result</a> &middot;
+  <a href="#what-the-satellite-sees">What the satellite sees</a> &middot;
+  <a href="#how-it-works">How it works</a> &middot;
+  <a href="#the-application">App</a> &middot;
+  <a href="#pricing">Pricing</a> &middot;
+  <a href="#security">Security</a> &middot;
+  <a href="#limitations">Limits</a> &middot;
+  <a href="#quick-start">Run it</a>
+</p>
 
 **Parametric maize insurance, priced and proven on 25 years of satellite data.**
 
@@ -7,6 +29,17 @@ Open Earth-observation data in, a priced and cryptographically sealed drought tr
 Built for LP Dev DataQuest · `#LPDevDataQuest`
 
 ---
+
+<table align="center">
+  <tr>
+    <td align="center"><b>312</b><br>district-seasons</td>
+    <td align="center"><b>12</b><br>districts, 3 provinces</td>
+    <td align="center"><b>75% vs 50%</b><br>real losses paid,<br>msIndex vs rainfall</td>
+    <td align="center"><b>0</b><br>rainfall cutoffs where<br>msIndex is behind</td>
+    <td align="center"><b>23x</b><br>risk-band separation</td>
+    <td align="center"><b>56</b><br>tests</td>
+  </tr>
+</table>
 
 ## The problem
 
@@ -34,6 +67,12 @@ Other measured outcomes on the same holdout:
 
 - **0.65** correlation between predicted and actual yield shortfall on unseen seasons.
 - **23× separation** between risk bands: a district the engine called *Catastrophic* was 23 times more likely to have genuinely lost its crop than one it called *Low*.
+
+## What the satellite sees
+
+The model reads how green the cropland actually got, against each district's own history. In season 2015 (the 2015/16 crop) cropland across the maize triangle was far less green than usual, and mean yield across the 12 districts fell to 3.5 t/ha. A year later it was greener than usual and mean yield was 6.1 t/ha, the best of the 26 seasons.
+
+<p align="center"><img src="docs/img/greenness_2015_vs_2016.png" alt="Cropland greenness against each district's own average: season 2015 is mostly brown (below), season 2016 mostly teal (above)" width="100%"></p>
 
 ## How it works
 
@@ -67,7 +106,7 @@ Measured against yield anomaly across the 216 training district-seasons, the str
 Requires Python 3.12+ (developed on 3.14).
 
 ```bash
-git clone https://github.com/Mandla78/msindex.git
+git clone https://github.com/MandlaBaloyi/msindex.git
 cd msindex
 
 python -m venv venv
@@ -244,6 +283,10 @@ msIndex is underwriting infrastructure, not an insurer — a software margin, no
 | Audit & compliance | Insurers, regulators | Included, priced into the fee |
 
 Why they buy: a back-tested, priced trigger and a settlement file they can defend to a regulator — without building an Earth-observation team. Regulatory capital stays with the party that already carries the risk.
+
+## Licence
+
+[MIT](LICENSE) for the code. The data keeps the terms of the organisations that publish it (UCSB Climate Hazards Center, ECMWF Copernicus, NASA LP DAAC, ESA WorldCover, Crop Estimates Committee, HarvestStat Africa, DAFF). Third-party files in this repository, such as the agricultural statistics spreadsheet, remain under their publishers' terms.
 
 ---
 
